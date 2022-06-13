@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
-import { cartReducer } from "./../redux/cartReducer";
+// import { cartReducer } from "./../redux/cartReducer";
 import { useSelector } from "react-redux";
 import { FaCartPlus, FaUserAlt } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";

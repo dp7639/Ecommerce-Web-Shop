@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import fireDB from './../fireconfig';
 import { useNavigate } from 'react-router-dom'
-import { ecommerceproducts } from './../ecommerce-products';
-import { async } from '@firebase/util';
+// import { ecommerceproducts } from './../ecommerce-products';
+// import { async } from '@firebase/util';
 import { useDispatch, useSelector } from 'react-redux'
-import { cartReducer } from './../redux/cartReducer';
+// import { cartReducer } from './../redux/cartReducer';
 function Homepage() {
 
   const [products, setproducts] = useState([])
@@ -84,7 +84,7 @@ function Homepage() {
                     <div className='product-content'>
                       <p>{product.name}</p>
                       <div className='text-center'>
-                        <img src={product.imageURL} className='product-img' />
+                        <img src={product.imageURL} className='product-img' alt="" />
                       </div>
                     </div>
                     <div className='product-actions'>

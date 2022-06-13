@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Layout from './../components/Layout';
 import { useSelector, useDispatch } from 'react-redux';
-import { cartReducer } from './../redux/cartReducer';
+// import { cartReducer } from './../redux/cartReducer';
 import { FaTrash } from 'react-icons/fa';
 import { Modal } from 'react-bootstrap';
 import { addDoc, collection } from 'firebase/firestore';
@@ -60,6 +60,7 @@ function CartPage() {
       setloading(true)
       const result = await addDoc(collection(fireDB, "orders"), orderInfo)
       setloading(false)
+      console.log(result)
       toast.success('Order placed successfully')
       handleClose()
 
@@ -87,7 +88,7 @@ function CartPage() {
                 {cartItems.map((item) => {
                   return (
                     <tr>
-                      <td><img src={item.imageURL} width="80" height="80" /></td>
+                      <td><img src={item.imageURL} width="80" height="80" alt="" /></td>
                       <td>{item.name}</td>
                       <td>{item.price} RS/-</td>
                       <td><FaTrash onClick={() => deletefromcart(item)} /></td>
