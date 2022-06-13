@@ -22,7 +22,7 @@ function RegisterPage() {
       setemail('')
       setpassword('')
       setconfirmpassword('')
-      window.location.href = '/login'
+      window.location.href = '/LoginPage'
 
     } catch (error) {
       console.log(error)
