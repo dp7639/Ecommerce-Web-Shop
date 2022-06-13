@@ -15,7 +15,8 @@ input,textarea {
 }
 .register-parent {
     height: 100vh;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
+    background-color: #7db2e1;
 }
 .register-parent .row {
     height:100vh;
@@ -27,7 +28,8 @@ input,textarea {
     left: 0;
     right: 0;
     top:0;
-    background-color: #003F5C;
+    /* background-color: #003F5C; */
+    background-color:#1A237E;
 }
 .login-form {
     background-color: white;
@@ -37,7 +39,8 @@ input,textarea {
 }
 .login-parent {
     height: 100vh;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
+    background-color: #7db2e1;
 }
 .login-parent .row {
     height:100vh;
@@ -49,7 +52,8 @@ input,textarea {
     left: 0;
     right: 0;
     bottom:0;
-    background-color: #003F5C;
+    /* background-color: #003F5C; */
+    background-color:#1A237E;
 }
 .z1 {
     z-index:1 !important;

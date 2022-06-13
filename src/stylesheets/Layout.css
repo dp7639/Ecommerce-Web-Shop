@@ -1,5 +1,6 @@
 .navbar {
-    background-color: #003f5c !important;
+    /* background-color: #003f5c !important; */
+    background-color:#1A237E !important;
 }
 .nav-link {
     color:white !important;
@@ -11,14 +12,12 @@
 }
 
 .footer {
-    background-color: #003f5c;
+    /* background-color: #003f5c; */
+    background-color:#1A237E;
     text-align: center;
     padding: 15px;
     color: white;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    
 }
 .header {
     position: fixed;
@@ -29,9 +28,11 @@
 }
 .content {
     padding-top: 70px;
+    margin-bottom: 200px !important;
 }
 button {
-    background-color: #003F5C;
+    /* background-color: #003F5C; */
+    background-color:#1A237E;
     box-shadow: none;
     border: 1px solid rgba(255, 255, 255, 0.692);
     color:white;

@@ -35,30 +35,33 @@ function OrdersPage() {
     return (
         <Layout loading={loading}>
             <div className='p-2'>
+            <h2 className='pb-3'>My Orders</h2>
                 {orders.filter(obj => obj.userid === userid).map((order) => {
                     return (
-                        <table className='table mt-3 order'>
-                            <thead>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Name</th>
-                                    <th>Price</th>
+                        <div>
+                            <table className='table mt-3 order'>
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {order.cartItems.map((item) => {
-                                    return (
-                                        <tr>
-                                            <td><img src={item.imageURL} width="80" height="80" alt="" /></td>
-                                            <td>{item.name}</td>
-                                            <td>{item.price} RS/-</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {order.cartItems.map((item) => {
+                                        return (
+                                            <tr>
+                                                <td><img src={item.imageURL} width="80" height="80" alt="" /></td>
+                                                <td>{item.name}</td>
+                                                <td>{item.price} RS/-</td>
 
-                                        </tr>
-                                    )
-                                })}
-                            </tbody>
-                        </table>
+                                            </tr>
+                                        )
+                                    })}
+                                </tbody>
+                            </table>
+                        </div>
                     )
                 })}
             </div>

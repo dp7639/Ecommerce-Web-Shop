@@ -11,6 +11,7 @@ function CartPage() {
   const { cartItems } = useSelector(state => state.cartReducer)
   const [TotalAmount, setTotalAmount] = useState(0)
   const dispatch = useDispatch()
+  const [btn, setbtn] = useState(true);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -24,23 +25,22 @@ function CartPage() {
 
 
   useEffect(() => {
-
     let temp = 0;
     cartItems.forEach((cartItem) => {
       temp = Number(temp) + Number(cartItem.price)
-
     })
     setTotalAmount(temp)
   }, [cartItems])
-  useEffect(() => {
 
+  useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems))
+
   }, [cartItems])
 
   const deletefromcart = (item) => {
-
     dispatch({ type: 'DELETE_FROM_CART', payload: item })
   }
+
   const placeOrder = async () => {
     const addressInfo = {
       name,
@@ -63,6 +63,10 @@ function CartPage() {
       console.log(result)
       toast.success('Order placed successfully')
       handleClose()
+      localStorage.removeItem("cartItems");
+      setbtn(false)
+      window.location.reload();
+      window.location.href = '/orders'
 
     } catch (error) {
       setloading(false)
@@ -97,12 +101,17 @@ function CartPage() {
                 })}
               </tbody>
             </table>
-            <div className='d-flex justify-content-end'>
-              <h1 className='total-amount'>Total Amount = {TotalAmount} RS/-</h1>
-            </div>
-            <div className='d-flex justify-content-end mt-3'>
-              <button onClick={handleShow}>PLACE ORDER</button>
-            </div>
+            {cartItems.length > 0 ? (
+              <div>
+                <div className='d-flex justify-content-end'>
+                  <h1 className='total-amount'>Total Amount = {TotalAmount} RS/-</h1>
+                </div>
+                <div className='d-flex justify-content-end mt-3'>
+                  <button style={{ display: btn ? "block" : "none" }} onClick={handleShow}>PLACE ORDER</button>
+                </div>
+              </div>
+            ) : (<h5 className='text-center'>No cart items</h5>)}
+
           </div>
         </div>
 
