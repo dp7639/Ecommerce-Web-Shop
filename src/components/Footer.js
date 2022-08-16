@@ -5,7 +5,7 @@ function Footer() {
     <div className='footer fixed-bottom'>
       <p>Designed and Developed By</p>
       <hr/>
-      <p>Deepa.J</p>
+      <p>Deepa.B</p>
       
     </div>
   );
